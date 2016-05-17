@@ -14,7 +14,7 @@ class AuthController extends Controller {
     use AuthenticatesAndRegistersUsers,
         ThrottlesLogins;
 
-    protected $redirectTo = '/admin';
+    protected $redirectTo = '/admin/dashboard';
     protected $guard = 'admin';
 
     /**
@@ -47,7 +47,7 @@ class AuthController extends Controller {
 
     public function showLoginForm() {
         if (Auth::guard('admin')->user() ) {
-            return redirect('/admin');
+            return redirect('/admin/dashboard');
         }else{
            // echo 'test'; die;
             return view('admin.auth.login');

@@ -40,6 +40,8 @@ class AdminController extends Controller
   {
     return view('admin/appointments');
   }
+  
+  
 
 //  public function availability()
 //  {
